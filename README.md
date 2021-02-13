@@ -7,7 +7,9 @@ Docker image available at [https://hub.docker.com/r/nopor/valheim-server](https:
 
 ## Instructions
 Start the server with the following env vars:
+- CPU_MHZ cpu frecuency in mhz (required by steamcmd)
 - SERVER_NAME
 - SERVER_PASSWORD
   - must be at least 5 characters long!
 - SERVER_WORLD
+- SAVE_PATH path to the savegame
