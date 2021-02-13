@@ -1,0 +1,22 @@
+version: "3.9"
+   
+services:
+  valheim:
+    image: bonebroke/valheim-server:latest
+    environment:
+      - CPU_MHZ=2570
+      - SERVER_NAME=nirezerbitzaria
+      # at least 5 letters
+      - SERVER_PASSWORD=changeme!
+      - SERVER_WORLD=valheimWorld
+      - SERVER_PORT=2456
+      - SAVE_PATH=/home/steam/save
+    ports:
+      - "2456-2458:2456-2458"
+      - "2456:2456/udp"
+      - "2457:2457/udp"
+      - "2458:2458/udp"
+    volumes:
+      - ./save:/home/steam/save
+    tty: true
+    stdin_open: true

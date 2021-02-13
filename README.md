@@ -1,8 +1,7 @@
 # docker-valheim
-Docker server for Valheim based on [https://github.com/nopor/docker-valheim](https://github.com/nopor/docker-valheim)
+Docker server for [Valheim](https://store.steampowered.com/app/892970/Valheim/) based on [https://github.com/nopor/docker-valheim](https://github.com/nopor/docker-valheim)
 
-[https://store.steampowered.com/app/892970/Valheim/](https://store.steampowered.com/app/892970/Valheim/)
-
+ Docker image available at [https://hub.docker.com/r/bonebroke/valheim-server](https://hub.docker.com/r/bonebroke/valheim-server)
 
 ## Instructions
 Start the server with the following env vars:
@@ -12,3 +11,5 @@ Start the server with the following env vars:
   - must be at least 5 characters long!
 - SERVER_WORLD
 - SAVE_PATH path to the savegame
+
+There is an example docker-compose.yml file added that mounts ```./save``` directory on the save_path of the container to persist the world between container restarts
