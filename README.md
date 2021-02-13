@@ -3,7 +3,6 @@ Docker server for Valheim based on [https://github.com/nopor/docker-valheim](htt
 
 [https://store.steampowered.com/app/892970/Valheim/](https://store.steampowered.com/app/892970/Valheim/)
 
-Docker image available at [https://hub.docker.com/r/nopor/valheim-server](https://hub.docker.com/r/nopor/valheim-server)
 
 ## Instructions
 Start the server with the following env vars:
