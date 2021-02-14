@@ -34,4 +34,4 @@ ENV SAVE_PATH="/home/steam/save"
 
 ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
 
-CMD ["/bin/sh", "start-server.sh", "-n"]
+CMD ["./start-server.sh", "-n"]
