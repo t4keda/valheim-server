@@ -31,6 +31,7 @@ ENV SERVER_PASSWORD=""
 ENV SERVER_WORLD="World"
 ENV SERVER_PORT=2456
 ENV SAVE_PATH="/home/steam/save"
+ENV public=1
 
 ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
 

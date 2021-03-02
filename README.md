@@ -13,5 +13,6 @@ env vars can be configured:
   - must be at least 5 characters long!
 - SERVER_WORLD
 - SAVE_PATH path to the savegame
+- PUBLIC if set to 1 the server will be listed in the server browser
 
 The provided docker-compose.yml example file mounts ```./save``` directory on the save_path of the container to persist the world between container restarts

@@ -24,4 +24,4 @@ echo "### Starting Valheim server ###"
   -world "${SERVER_WORLD}" \
   -savedir "${SAVE_PATH}" \
   -password "${SERVER_PASSWORD}" \
-  -public 1
+  -public ${PUBLIC}
