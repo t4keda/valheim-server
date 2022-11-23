@@ -2,7 +2,7 @@ FROM cm2network/steamcmd:latest
 
 USER root
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends libsdl2-2.0-0:i386 && \
+	apt-get -y install --no-install-recommends libsdl2-2.0-0 && \
 	rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/steam
@@ -32,6 +32,8 @@ ENV SERVER_WORLD="World"
 ENV SERVER_PORT=2456
 ENV SAVE_PATH="/home/steam/save"
 ENV public=1
+ENV BETA_NAME=""
+ENV BETA_PASSWORD=""
 
 ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
 
