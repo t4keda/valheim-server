@@ -35,6 +35,6 @@ ENV public=1
 ENV BETA_NAME=""
 ENV BETA_PASSWORD=""
 
-ENTRYPOINT  ["/bin/sh", "entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
 
 CMD ["./start-server.sh", "-n"]

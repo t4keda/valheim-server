@@ -2,22 +2,7 @@
 
 source ./backup-params.env
 
-function get_pid {
-        pid_line=$(docker exec -ti $valheim_container bash -c 'ls -l /proc/*/exe|grep valheim_server')
-
-        a=${pid_line/*\/proc\//}
-        echo ${a/\/*/}
-}
-
-pid=$(get_pid)
-
-docker exec -ti $valheim_container bash -c "kill -2 $pid"
-
-while [ "$(docker ps |grep $valheim_container |wc -l)" -ne "0" ]; do
-        echo "wait for $valheim_container to stop..."
-        sleep 1
-done
-
+docker stop $valheim_container
 echo "backup time"
 if [ ! -z "$smb_backup_server" ];then
         cred_string="$smb_user\nWORKGROUP\n$smb_password\n"
