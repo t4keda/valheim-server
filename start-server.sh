@@ -12,13 +12,9 @@ if [ -z ${SERVER_PASSWORD} ] || [ ${#SERVER_PASSWORD} -lt 5 ]; then
     exit 1
 fi
 
-# else
-#   params+=(-public 0)
-# fi
-
 echo ${params[@]}
 echo "### Starting Valheim server ###"
-./data/valheim_server.x86_64 \
+exec ./data/valheim_server.x86_64 \
   -name "${SERVER_NAME}" \
   -port "${SERVER_PORT}" \
   -world "${SERVER_WORLD}" \
