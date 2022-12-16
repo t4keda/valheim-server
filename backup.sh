@@ -12,7 +12,7 @@ if [ ! -z "$smb_backup_server" ];then
         echo -e $cred_string | gio copy --progress "$save_path/worlds_local/$world_name.fwl" "smb://$smb_backup_server/$smb_path/$backup_path/$world_name.fwl.$date_str"
 
         while [ "$(echo -e $cred_string | gio list smb://$smb_backup_server/$smb_path/$backup_path/|grep '.db.'|wc -l)" -gt "4" ]; do
-                db_file=$(echo -e $cred_string | gio list smb://$smb_backup_server/$smb_path/$backup_path/|grep '.db.'|head -n 1)
+                db_file=$(echo -e $cred_string | gio list smb://$smb_backup_server/$smb_path/$backup_path/|grep '.db.'|sort|head -n 1)
                 date=${db_file: -14}
                 echo "bigger than 4, next to delete $world_name.db.$date, $world_name.fwl.$date"
                 echo -e $cred_string | gio remove "smb://$smb_backup_server/$smb_path/$backup_path/$world_name.db.$date"
@@ -26,7 +26,7 @@ elif [ ! -z "$backup_path" ];then
         cp "$save_path/worlds_local/$world_name.fwl" "$backup_path/$world_name.fwl.$date_str"
 
         while [ "$(ls $backup_path/|grep '.db.'|wc -l)" -gt "4" ]; do
-                db_file=$(ls $backup_path/|grep '.db.'|head -n 1)
+                db_file=$(ls $backup_path/|grep '.db.'|sort|head -n 1)
                 date=${db_file: -14}
                 echo "bigger than 4, next to delete $world_name.db.$date, $world_name.fwl.$date"
                 rm "$backup_path/$world_name.db.$date"
