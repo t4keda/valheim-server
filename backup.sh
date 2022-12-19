@@ -2,7 +2,12 @@
 
 source ./backup-params.env
 
+#for the gio to work in ubuntu using crontab
+export XDG_DATA_DIRS=/usr/share/xubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
 docker stop $valheim_container
+
 echo "backup time"
 if [ ! -z "$smb_backup_server" ];then
         cred_string="$smb_user\nWORKGROUP\n$smb_password\n"
